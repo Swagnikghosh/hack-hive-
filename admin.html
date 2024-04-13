@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="admin.css">
+        <title>Password Generator</title>
+    </head>
+    <body>
+        <h1>Password Generator</h1>
+        <form action="http://localhost:8080/registerteacherfinal" method="post">
+
+            <label for="email">Recipient's Email:</label>
+            <input type="text" placeholder="username" name="username">
+            <input type="email" id="email" name="email" placeholder="Enter recipient's email" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" cols="50"
+                placeholder="Enter your message"></textarea>
+            <label for="password">Generated Password:</label>
+            <input type="text" id="password" readonly name="pass">
+            <button id="generateButton">Generate Password</button>
+            <br>
+
+            <br>
+
+            <button id="submitButton">Submit</button>
+            <!-- <button id="messageButton">Message</button> -->
+        </form>
+        <script>
+        // Function to generate a random password
+        function generatePassword(length) {
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let password = "";
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            return password;
+        }
+
+        // Function to update the password input field
+        function updatePasswordField() {
+            const passwordInput = document.getElementById("password");
+            const generatedPassword = generatePassword(12); // Change the length as needed
+            passwordInput.value = generatedPassword;
+        }
+
+        // Function to send an email
+        function sendEmail() {
+            const emailInput = document.getElementById("email");
+            const email = emailInput.value;
+
+            // Check if an email is provided
+            if (!email) {
+                alert("Please enter a recipient's email address.");
+                return;
+            }
+
+            // Generate the password
+            updatePasswordField();
+
+            // Get the generated password
+            const passwordInput = document.getElementById("password");
+            const password = passwordInput.value;
+
+            // Get the message
+            const messageInput = document.getElementById("message");
+            const message = messageInput.value;
+
+            // Compose the email body
+            const subject = "Your Generated Password";
+            const body = `Here is your generated password: ${password}\n\n${message}`;
+
+            // Create a mailto link
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open the user's email client
+            window.location.href = mailtoLink;
+        }
+
+        // Function to open the user's messaging application
+        function openMessagingApp() {
+            const emailInput = document.getElementById("email");
+            const email = emailInput.value;
+
+            // Check if an email is provided
+            if (!email) {
+                alert("Please enter a recipient's email address.");
+                return;
+            }
+
+            // Generate the password
+            updatePasswordField();
+
+            // Get the generated password
+            const passwordInput = document.getElementById("password");
+            const password = passwordInput.value;
+
+            // Get the message
+            const messageInput = document.getElementById("message");
+            const message = messageInput.value;
+
+            // Compose the message body
+            const fullMessage = `Here is your generated password: ${password}\n\n${message}`;
+
+            // Create a mailto link with the message body
+            const mailtoLink = `mailto:${email}?body=${encodeURIComponent(fullMessage)}`;
+
+            // Open the user's email client (messaging application)
+            window.location.href = mailtoLink;
+        }
+
+        // Add a click event listener to the "Generate Password" button
+        const generateButton = document.getElementById("generateButton");
+        generateButton.addEventListener("click", updatePasswordField);
+
+        // Add a click event listener to the "Submit" button
+        const submitButton = document.getElementById("submitButton");
+        submitButton.addEventListener("click", sendEmail);
+
+        // Add a click event listener to the "Message" button
+        const messageButton = document.getElementById("messageButton");
+        messageButton.addEventListener("click", openMessagingApp);
+    </script>
+    </body>
+</html>

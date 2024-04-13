@@ -1,0 +1,51 @@
+body{
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url("pictures/loginback123.jpg");
+    background-size: cover;
+	background-attachment: fixed;
+}
+.service-swipe {
+	display: flex;
+	flex-wrap: wrap;
+    margin: 75px;
+    /* position: absolute; */
+	justify-content: center;
+	align-items: center;
+	/* background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url("images/extra/b3.jpg"); */
+	background-size: cover;
+	background-attachment: fixed;
+}
+.service-swipe .s-card img {
+	width: 100px;
+}
+.service-swipe a {
+	padding: 0;
+	margin: 40px 10px;
+    text-decoration: none;
+}
+.service-swipe .s-card {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+	align-items: center;
+	text-align: center;
+	width: 200px;
+	height: 170px;
+	box-shadow: inset 0 0 20px rgba(255,255,255,0.05),
+					0 0 50px rgba(0,0,0,0.8);
+	border-radius: 5px;
+	cursor: pointer;
+	transition-duration: .5s;
+    /* background-color: rgb(76, 0, 255);
+    opacity: 0.5; */
+    color: black;
+}
+.service-swipe .s-card p {
+	color: white;
+	font-size: 2em;
+	font-family: 'Open Sans',sans-serif;
+    opacity: 1.5;
+}
+.service-swipe .s-card:hover {
+	box-shadow: 0 0 50px rgba(255,255,255,0.8);
+	transform: translateY(-10px);
+}

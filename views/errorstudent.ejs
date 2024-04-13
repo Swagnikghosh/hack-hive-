@@ -1,0 +1,98 @@
+<!-- views/login.ejs -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" type="jpeg" href="pictures/browsericon.jpeg">
+        <title>Login SignUp</title>
+        <link rel="stylesheet" type="text/css" href="login.css">
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- It will redirect to the Home Page after submitting the form -->
+        <!-- <script>
+  $(document).ready(function(){
+    $("form").submit(function(){
+      alert("Great Job !");
+    });
+  });
+  </script> -->
+    </head>
+    <body>
+        <!-- <h1>Login</h1> -->
+        <% if (error) { %>
+        <script>
+      alert('<%= error %>');
+    </script>
+        <% } %>
+
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" id="log"
+                    onclick="login()" style="color: #fff;">Log In</button>
+                <button type="button" class="toggle-btn" id="reg"
+                    onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="images/icon/fb2.png">
+                <img src="images/icon/insta2.png">
+                <img src="images/icon/tt2.png">
+            </div>
+
+            <!-- Login Form -->
+            <form id="login" class="input-group"
+                action="http://localhost:8080/login" method="post">
+                <p id="para34"></p>
+                <div class="inp">
+                    <img src="images/icon/user.png"><input name="user"
+                        type="text" id="user1" class="input-field"
+                        placeholder="Username or Phone Number"
+                        style="width: 88%; border:none;" required="required">
+                </div>
+                <div class="inp">
+                    <img src="images/icon/password.png"><input name="pass1"
+                        type="password" id="user1" class="input-field"
+                        placeholder="Password" style="width: 88%; border: none;"
+                        required="required">
+                </div>
+                <input type="checkbox" class="check-box">Remember Password
+                <button type="submit" class="submit-btn" id="login_btn">Log In</button>
+            </form>
+
+            <!-- <div class="other" id="other">
+				<div class="instead">
+					<h3>or</h3>
+				</div>
+				<button class="connect" onclick="google()">
+					<img src="images/icon/google.png"><span>Sign in with Google</span>
+				</button>
+			</div>
+			 -->
+            <!-- Registration Form -->
+            <form id="register" class="input-group" method="post"
+                action="http://localhost:8080/register">
+                <input type="text" class="input-field" placeholder="Full Name"
+                    required="required" name="user">
+                <input type="email" class="input-field"
+                    placeholder="Email Address" required="required" name="email">
+                <input type="text" class="input-field" placeholder="Enter Age"
+                    name="age" required="required" name="age">
+                <input type="text" class="input-field"
+                    placeholder="What do you want to study" name="study"
+                    required="required" name="study">
+                <input type="password" class="input-field"
+                    placeholder="Create Password" required="required"
+                    name="pass">
+                <input type="password" class="input-field"
+                    placeholder="Confirm Password" required="required"
+                    name="cpass">
+                <input type="checkbox" class="check-box" id="chkAgree"
+                    onclick="goFurther()">I agree to the Terms & Conditions
+
+                <button type="submit" id="btn3" class>Register</button>
+            </form>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+        <script src="loginback.js"></script>
+    </body>
+</html>

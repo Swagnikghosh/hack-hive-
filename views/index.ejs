@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="jpeg" href="pictures/browsericon.jpeg">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+	<title>VEDA</title>
+	<meta name="desciption" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		$(window).on('scroll', function(){
+  			if($(window).scrollTop()){
+  			  $('nav').addClass('black');
+ 			 }else {
+ 		   $('nav').removeClass('black');
+ 		 }
+		})
+	</script>
+</head>
+<body>
+<!-- Navigation Bar -->
+	<header id="header">
+		<nav>
+			<div class="logo"><img src="pictures/logofinal.png" alt="logo" class="logo"></div>
+			<ul>
+				<li><a class="active" href="index2.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+            <li><a href="">Get Mentorship</a></li>
+            <li><a href="">videoes</a></li>
+            <li><a href="doubts.html">doubts</a></li>
+				<!-- <li><a href="#contactus_section">Contact</a></li> -->
+			</ul>
+			<!-- <div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="images/icon/search.png" alt="search" onclick=slide()></div> -->
+			<a class="get-started" href="index2.html">Log out</a>
+			<img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+		</nav>
+        <h1 id="welcome">WELCOME <%= user %></h1>
+		<div class="head-container">
+			
+			<div class="quote">
+				<p class="text">Embrace the new with the art of knowledge and accept the you with the smile of endurance.</p>
+				 <!-- <h5></h5> -->
+
+				<!-- <div class="play">
+					<img src="images/icon/play.png" alt="play"><span><a href="https://www.youtube.com/watch?v=KFyrgDO1WXk" target="_blank">Watch Now</a></span>
+				</div> -->
+			</div>
+			<div class="svg-image">
+				<img src="pictures/logo.jpg" alt="svg">
+			</div>
+		</div>
+		
+	</header>

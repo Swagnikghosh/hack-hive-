@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Email File Attachment</title>
+        <link rel="stylesheet" href="verify.css">
+    </head>
+    <body>
+        <h1 id="thankyou"></h1>
+        <br><br>
+        <form action="mailto:recipient@example.com" method="post"
+            href="thankyou.html" id="form">
+            <!-- <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject" required> -->
+            <br>
+
+            <br>
+            <p>Please upload the following documents</p>
+            <ul>
+                <li>Cv</li>
+                <li>Photo</li>
+                <li>Valid Id</li>
+            </ul>
+            <br>
+            <input type="submit" value="Send Email" id="thankyou1">
+        </form>
+        <script>
+        let thankyou=document.querySelector("#thankyou");
+let thankyou1=document.querySelector("#thankyou1");
+let form=document.querySelector("#form");
+thankyou1.addEventListener("click",()=>{
+  thankyou.innerText="";
+  form.innerHtml="<h1>thankyou for registering.your cv will son be verified and you will receive notifications on your mail</h1>";
+})
+    </script>
+    </body>
+</html>

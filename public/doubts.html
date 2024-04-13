@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doubt Clearing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)),url("pictures/loginback123.jpg");
+
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            opacity: 0.7;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Doubt Clearing</h1>
+        <form action="mailto:swagnikghosh705@gmail.com" method="post" enctype="text/plain">
+            <label for="category">Doubt Category:</label>
+            <select name="category" id="category">
+                <option value="Math">engineering</option>
+                <option value="Science">medical</option>
+                <option value="History">masters</option>
+                <option value="Programming">computer</option>
+                <option value="Other">honours</option>
+                <option value="Other">art</option>
+                <option value="Other">ca</option>
+                
+
+            </select>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="doubt">Doubt Description:</label>
+            <textarea id="doubt" name="doubt" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

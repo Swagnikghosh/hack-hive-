@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Email Form</h1>
+    
+    <form>
+        <label for="category">CATEGORY:</label>
+        <select id="category" name="category">
+            <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+            <option value="PHYSICS">PHYSICS</option>
+            <option value="CHEMISTRY">CHEMISTRY</option>
+            <option value="MATHS">MATHS</option>
+        </select>
+        <br><br>
+        <label for="subject">SUBJECT OF MAIL</label>
+        <input type="text" id="subject" name="subject" required><br><br>
+        
+       
+        
+        <label for="topic">TOPIC:</label>
+        <input type="text" id="topic" name="topic" required><br><br>
+        
+        <a id="sendEmail" href="#" onclick="sendEmail();">Send Email</a>
+    </form>
+   
+
+    <script>
+        function sendEmail() {
+            const subject = document.getElementById('subject').value;
+            const category = document.getElementById('category').value;
+            const topic = document.getElementById('topic').value;
+            
+            let recipientEmail = '';
+
+            switch (category) {
+                case 'general':
+                    recipientEmail = 'doleswari2002@gmail.com';
+                    break;
+                case 'sales':
+                    recipientEmail = 'swagnikghosh705@gmail.com';
+                    break;
+                case 'support':
+                    recipientEmail = 'support@example.com';
+                    break;
+                case 'billing':
+                    recipientEmail = 'billing@example.com';
+                    break;
+                default:
+                    recipientEmail = 'recipient@example.com'; // Default email
+            }
+
+            // Create the mailto link
+            const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=Category: ${encodeURIComponent(category)}%0D%0A%0D%0ATopic: ${encodeURIComponent(topic)}`;
+
+            // Open the user's default email client
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
